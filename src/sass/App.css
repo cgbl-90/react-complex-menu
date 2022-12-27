@@ -1,0 +1,109 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 100px;
+  place-items: center;
+}
+
+a,
+a:focus,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  height: 70px;
+}
+
+.social {
+  height: 20px !important;
+  width: 20px;
+  margin: 5px;
+  transition: 0.3s ease;
+}
+.social:hover, .social:focus {
+  opacity: 0.5;
+}
+
+.links {
+  margin: 5px;
+  transition: 0.3s ease;
+}
+.links:hover, .links:focus {
+  opacity: 0.5;
+}
+
+.toggleBtn {
+  display: none;
+}
+.toggleBtn:hover, .toggleBtn:focus {
+  opacity: 0.5;
+}
+
+.toggleDown {
+  display: none;
+  float: right;
+  text-align: right;
+}
+.toggleDown a {
+  display: block;
+  width: auto;
+  padding: 5px 10px;
+}
+.toggleDown a:hover, .toggleDown a:focus {
+  background-color: rgb(178, 178, 244);
+}
+
+main {
+  height: 70vh;
+  width: 100%;
+  box-shadow: 1px 2px 8px grey;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+
+@media screen and (max-width: 650px) {
+  .socialNav {
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  .toggleNav {
+    display: none;
+  }
+  .toggleBtn {
+    display: block;
+  }
+}
+/** 
+const page = e.target.textContext;
+const tempBtn = e.target.getBoundingClientRect()
+gets the location
+
+event -> OnMouseHover
+
+if (!e.target.classList.contains('link_btn')) hide menu
+*/
+.submenu {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 4px;
+  position: absolute;
+}
+.submenu a {
+  padding: 5px 10px;
+}/*# sourceMappingURL=App.css.map */
