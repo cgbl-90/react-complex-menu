@@ -8,6 +8,8 @@ import "./sass/App.css";
 function Header() {
   const [style, setStyle] = useState(false);
   const [submenuItems, setSubmenuItems] = useState([]);
+  const [xCrd, setXCrd] = useState(0);
+  const [yCrd, setYCrd] = useState(0);
 
   function moveMenu(e) {
     const value = e.target.textContent;
@@ -15,10 +17,8 @@ function Header() {
       if (el.name === value) setSubmenuItems(el.submenu);
     });
     const tempBtn = e.target.getBoundingClientRect();
-    /// Get the wd of the screen
-    /// Get the wd of the nav bar submenu
-    /// Get the location of mouse
-    /// Move navbar depending on wd and mouse position
+    setXCrd(tempBtn.x);
+    setYCrd(tempBtn.y);
   }
 
   return (
@@ -79,13 +79,16 @@ function Header() {
           );
         })}
       </nav>
-      <nav className="submenu" onMouseLeave={() => setSubmenuItems([])}>
+      <nav
+        className="submenu"
+        onMouseLeave={() => setSubmenuItems([])}
+        style={{
+          top: yCrd + 30,
+          left: xCrd - 200,
+        }}
+      >
         {submenuItems.map((el, index) => (
-          <a
-            key={index}
-            rel="noopener noreferrer"
-            className="links"
-          >
+          <a key={index} rel="noopener noreferrer" className="links">
             {el}
           </a>
         ))}
